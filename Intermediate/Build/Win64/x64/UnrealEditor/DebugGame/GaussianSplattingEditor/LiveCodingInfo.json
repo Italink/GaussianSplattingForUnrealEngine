@@ -7,7 +7,6 @@
 			"GaussianSplattingSettings.gen.cpp.obj",
 			"GaussianSplattingStep.gen.cpp.obj",
 			"HLODBuilderGaussianSplatting.gen.cpp.obj",
-			"PerModuleInline.gen.cpp.obj",
 			"GaussianSplattingAssetFactory.cpp.obj",
 			"GaussianSplattingEditorModule.cpp.obj",
 			"GaussianSplattingEditorStyle.cpp.obj",

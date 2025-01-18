@@ -6,9 +6,9 @@
 /NAME:"UnrealEditor-GaussianSplattingRuntime-Win64-DebugGame.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\UnrealEngine\Publish\Proj55\Intermediate\Build\Win64\x64\ProjectEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.obj"
-"D:\UnrealEngine\Publish\Proj55\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp.obj"
-"D:\UnrealEngine\Publish\Proj55\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\GaussianSplattingPointDataInterface.cpp.obj"
-"D:\UnrealEngine\Publish\Proj55\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\GaussianSplattingRuntime.cpp.obj"
-"D:\UnrealEngine\Publish\Proj55\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Default.rc2.res"
-/OUT:"D:\UnrealEngine\Publish\Proj55\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\UnrealEditor-GaussianSplattingRuntime-Win64-DebugGame.lib"
+"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.obj"
+"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp.obj"
+"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\GaussianSplattingPointDataInterface.cpp.obj"
+"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\GaussianSplattingRuntime.cpp.obj"
+"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Default.rc2.res"
+/OUT:"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\UnrealEditor-GaussianSplattingRuntime-Win64-DebugGame.lib"
