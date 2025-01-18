@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.GaussianSplattingRuntime.cpp.obj": [
+			"GaussianSplattingPointDataInterface.gen.cpp.obj",
+			"GaussianSplattingRuntime.init.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"GaussianSplattingPointDataInterface.cpp.obj",
+			"GaussianSplattingRuntime.cpp.obj"
+		]
+	}
+}

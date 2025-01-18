@@ -1,0 +1,8 @@
+{
+	"BuildId": "37670630",
+	"Modules": 
+	{
+		"GaussianSplattingEditor": "UnrealEditor-GaussianSplattingEditor-Win64-DebugGame.dll",
+		"GaussianSplattingRuntime": "UnrealEditor-GaussianSplattingRuntime-Win64-DebugGame.dll"
+	}
+}

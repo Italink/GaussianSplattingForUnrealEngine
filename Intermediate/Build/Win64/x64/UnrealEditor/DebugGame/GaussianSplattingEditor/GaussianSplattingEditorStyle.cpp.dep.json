@@ -1,0 +1,25 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\unrealengine\\publish\\proj55\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingeditorstyle.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unrealengine\\publish\\proj55\\intermediate\\build\\win64\\x64\\projecteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.h.pch",
+        "Includes": [
+            "d:\\unrealengine\\publish\\proj55\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
+            "d:\\unrealengine\\publish\\proj55\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingeditorstyle.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\engine\\public\\slate\\slategameresources.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\projects\\public\\versescope.h",
+            "d:\\unrealengine\\ue_5.5\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestylemacros.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
