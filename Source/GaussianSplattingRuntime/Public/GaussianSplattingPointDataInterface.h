@@ -4,7 +4,7 @@
 #include "Misc/EngineVersionComparison.h"
 #include "GaussianSplattingPointDataInterface.generated.h"
 
-USTRUCT(BlueprintType, meta = (DisplayName = "Niagara ID"))
+USTRUCT(BlueprintType, meta = (DisplayName = "Gaussian Splatting Point"))
 struct FGaussianSplattingPoint
 {
 	GENERATED_BODY()

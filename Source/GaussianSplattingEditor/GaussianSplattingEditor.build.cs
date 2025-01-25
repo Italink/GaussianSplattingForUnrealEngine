@@ -43,7 +43,8 @@ public class GaussianSplattingEditor : ModuleRules
                 "ContentBrowserData",
                 "ToolMenus",
                 "Projects",
-                "NiagaraEditor"
+                "NiagaraEditor",
+                "LevelEditor"
             }
 		);
 	}

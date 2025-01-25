@@ -52,6 +52,7 @@ struct Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingSourceMode_St
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "Custom.Name", "EGaussianSplattingSourceMode::Custom" },
 		{ "Locate.Name", "EGaussianSplattingSourceMode::Locate" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 		{ "Select.Name", "EGaussianSplattingSourceMode::Select" },
@@ -60,6 +61,7 @@ struct Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingSourceMode_St
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
 		{ "EGaussianSplattingSourceMode::Select", (int64)EGaussianSplattingSourceMode::Select },
 		{ "EGaussianSplattingSourceMode::Locate", (int64)EGaussianSplattingSourceMode::Locate },
+		{ "EGaussianSplattingSourceMode::Custom", (int64)EGaussianSplattingSourceMode::Custom },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -103,7 +105,6 @@ struct Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingCameraMode_St
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
-		{ "Custom.Name", "EGaussianSplattingCameraMode::Custom" },
 		{ "Hemisphere.Name", "EGaussianSplattingCameraMode::Hemisphere" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 		{ "Sphere.Name", "EGaussianSplattingCameraMode::Sphere" },
@@ -112,7 +113,6 @@ struct Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingCameraMode_St
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
 		{ "EGaussianSplattingCameraMode::Hemisphere", (int64)EGaussianSplattingCameraMode::Hemisphere },
 		{ "EGaussianSplattingCameraMode::Sphere", (int64)EGaussianSplattingCameraMode::Sphere },
-		{ "EGaussianSplattingCameraMode::Custom", (int64)EGaussianSplattingCameraMode::Custom },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -462,11 +462,22 @@ struct Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics
 		{ "EditConditionHides", "" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraMode_MetaData[] = {
+		{ "Category", "GaussianSplattingStep_Capture" },
+		{ "EditCondition", "SourceMode != EGaussianSplattingSourceMode::Custom" },
+		{ "EditConditionHides", "" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FrameXY_MetaData[] = {
+		{ "Category", "GaussianSplattingStep_Capture" },
+		{ "EditCondition", "SourceMode != EGaussianSplattingSourceMode::Custom" },
+		{ "EditConditionHides", "" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CaptureDistanceScale_MetaData[] = {
 		{ "Category", "GaussianSplattingStep_Capture" },
-		{ "ClampMax", "2" },
 		{ "ClampMin", "0.010000" },
-		{ "EditCondition", "CameraMode != EGaussianSplattingCameraMode::Custom && SourceMode == EGaussianSplattingSourceMode::Select" },
+		{ "EditCondition", "SourceMode != EGaussianSplattingSourceMode::Custom" },
 		{ "EditConditionHides", "" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 		{ "UIMax", "2" },
@@ -480,7 +491,7 @@ struct Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_HiddenActors_MetaData[] = {
 		{ "Category", "GaussianSplattingStep_Capture" },
-		{ "EditCondition", "SourceMode == EGaussianSplattingSourceMode::Locate" },
+		{ "EditCondition", "SourceMode != EGaussianSplattingSourceMode::Select" },
 		{ "EditConditionHides", "" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
@@ -500,23 +511,13 @@ struct Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics
 		{ "Category", "GaussianSplattingStep_Capture" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraMode_MetaData[] = {
-		{ "Category", "GaussianSplattingStep_Capture" },
-		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FrameXY_MetaData[] = {
-		{ "Category", "GaussianSplattingStep_Capture" },
-		{ "EditCondition", "CameraMode != EGaussianSplattingCameraMode::Custom" },
-		{ "EditConditionHides", "" },
-		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShowFlagSettings_MetaData[] = {
 		{ "Category", "GaussianSplattingStep_Capture" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraActors_MetaData[] = {
 		{ "Category", "GaussianSplattingStep_Capture" },
-		{ "EditCondition", "CameraMode == EGaussianSplattingCameraMode::Custom" },
+		{ "EditCondition", "SourceMode == EGaussianSplattingSourceMode::Custom" },
 		{ "EditConditionHides", "" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
@@ -525,6 +526,9 @@ struct Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_SourceMode;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SelectionActors_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_SelectionActors;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_CameraMode_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_CameraMode;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_FrameXY;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CaptureDistanceScale;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_LocateActor;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_HiddenActors_Inner;
@@ -534,9 +538,6 @@ struct Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_RenderTargetResolution;
 	static void NewProp_bCaptureDepth_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bCaptureDepth;
-	static const UECodeGen_Private::FBytePropertyParams NewProp_CameraMode_Underlying;
-	static const UECodeGen_Private::FEnumPropertyParams NewProp_CameraMode;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_FrameXY;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ShowFlagSettings_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ShowFlagSettings;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraActors_Inner;
@@ -556,9 +557,12 @@ struct Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SourceMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SourceMode = { "SourceMode", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, SourceMode), Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingSourceMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceMode_MetaData), NewProp_SourceMode_MetaData) }; // 2637505385
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SourceMode = { "SourceMode", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, SourceMode), Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingSourceMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SourceMode_MetaData), NewProp_SourceMode_MetaData) }; // 1421777370
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SelectionActors_Inner = { "SelectionActors", nullptr, (EPropertyFlags)0x0104000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SelectionActors = { "SelectionActors", nullptr, (EPropertyFlags)0x0114000000002001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, SelectionActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SelectionActors_MetaData), NewProp_SelectionActors_MetaData) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode = { "CameraMode", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, CameraMode), Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingCameraMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraMode_MetaData), NewProp_CameraMode_MetaData) }; // 3184489191
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_FrameXY = { "FrameXY", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, FrameXY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FrameXY_MetaData), NewProp_FrameXY_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CaptureDistanceScale = { "CaptureDistanceScale", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, CaptureDistanceScale), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CaptureDistanceScale_MetaData), NewProp_CaptureDistanceScale_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_LocateActor = { "LocateActor", nullptr, (EPropertyFlags)0x0114000000022001, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, LocateActor), Z_Construct_UClass_ATriggerSphere_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LocateActor_MetaData), NewProp_LocateActor_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_HiddenActors_Inner = { "HiddenActors", nullptr, (EPropertyFlags)0x0104000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
@@ -571,9 +575,6 @@ void Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_bCapture
 	((UGaussianSplattingStep_Capture*)Obj)->bCaptureDepth = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_bCaptureDepth = { "bCaptureDepth", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UGaussianSplattingStep_Capture), &Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_bCaptureDepth_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bCaptureDepth_MetaData), NewProp_bCaptureDepth_MetaData) };
-const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode = { "CameraMode", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, CameraMode), Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingCameraMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraMode_MetaData), NewProp_CameraMode_MetaData) }; // 2413067996
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_FrameXY = { "FrameXY", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, FrameXY), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FrameXY_MetaData), NewProp_FrameXY_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_ShowFlagSettings_Inner = { "ShowFlagSettings", nullptr, (EPropertyFlags)0x0000000000004000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FEngineShowFlagsSetting, METADATA_PARAMS(0, nullptr) }; // 3559122429
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_ShowFlagSettings = { "ShowFlagSettings", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_Capture, ShowFlagSettings), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShowFlagSettings_MetaData), NewProp_ShowFlagSettings_MetaData) }; // 3559122429
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraActors_Inner = { "CameraActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
@@ -583,6 +584,9 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGaussian
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SourceMode,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SelectionActors_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_SelectionActors,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_FrameXY,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CaptureDistanceScale,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_LocateActor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_HiddenActors_Inner,
@@ -591,9 +595,6 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGaussian
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_RenderTarget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_RenderTargetResolution,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_bCaptureDepth,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode_Underlying,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraMode,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_FrameXY,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_ShowFlagSettings_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_ShowFlagSettings,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_Capture_Statics::NewProp_CameraActors_Inner,
@@ -967,21 +968,144 @@ struct Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics
 		{ "Category", "Train" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GaussianSplattingTrainParamsCustom_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Resolution_MetaData[] = {
 		{ "Category", "Train" },
+		{ "ClampMin", "1" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+		{ "UIMax", "8" },
+		{ "UIMin", "1" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TrainResolution_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Iterations_MetaData[] = {
 		{ "Category", "Train" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Number of total iterations to train for." },
+#endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TrainIterations_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Feature_LR_MetaData[] = {
 		{ "Category", "Train" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Spherical harmonics features learning rate." },
+#endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TrainDensificationInterval_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Opacity_LR_MetaData[] = {
 		{ "Category", "Train" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Opacity learning rate." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Scaling_LR_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Scaling learning rate." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Rotation_LR_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Rotation learning rate." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Position_LR_MaxSteps_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Number of steps (from 0) where position learning rate goes from to." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Position_LR_Init_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Initial 3D position learning rate." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Position_LR_Final_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Final 3D position learning rate." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Position_LR_DelayMult_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Position learning rate multiplier." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DensifyFromIter_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Iteration where densification starts." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DensifyUntilIter_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Iteration where densification stops." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DensifyGradThreshold_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Limit that decides if points should be densified based on 2D position gradient." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DensificationInterval_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "How frequently to densify." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OpacityResetInterval_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "How frequently to reset opacity." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Depth_L1_WeightInit_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ClampMin", "0" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Depth_L1_WeightFinal_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ClampMin", "0" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_LambdaDssim_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ClampMin", "0" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Influence of SSIM on total loss from 0 to 1." },
+#endif
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PercentDense_MetaData[] = {
+		{ "Category", "Train" },
+		{ "ClampMin", "0" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+#if !UE_BUILD_SHIPPING
+		{ "Tooltip", "Percentage of scene extent (0--1) a point must exceed to be forcibly densified" },
+#endif
+		{ "UIMax", "1" },
+		{ "UIMin", "0" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OutputType_MetaData[] = {
 		{ "Category", "Output" },
@@ -1010,10 +1134,25 @@ struct Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_GaussianSplattingTrainParams;
-	static const UECodeGen_Private::FStrPropertyParams NewProp_GaussianSplattingTrainParamsCustom;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_TrainResolution;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_TrainIterations;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_TrainDensificationInterval;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Resolution;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Iterations;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Feature_LR;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Opacity_LR;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Scaling_LR;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Rotation_LR;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Position_LR_MaxSteps;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Position_LR_Init;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Position_LR_Final;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Position_LR_DelayMult;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_DensifyFromIter;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_DensifyUntilIter;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_DensifyGradThreshold;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_DensificationInterval;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_OpacityResetInterval;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Depth_L1_WeightInit;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Depth_L1_WeightFinal;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_LambdaDssim;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_PercentDense;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_OutputType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_OutputType;
 	static void NewProp_bClippingByBound_SetBit(void* Obj);
@@ -1035,10 +1174,25 @@ struct Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_GaussianSplattingTrainParams = { "GaussianSplattingTrainParams", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, GaussianSplattingTrainParams), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GaussianSplattingTrainParams_MetaData), NewProp_GaussianSplattingTrainParams_MetaData) };
-const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_GaussianSplattingTrainParamsCustom = { "GaussianSplattingTrainParamsCustom", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, GaussianSplattingTrainParamsCustom), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GaussianSplattingTrainParamsCustom_MetaData), NewProp_GaussianSplattingTrainParamsCustom_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_TrainResolution = { "TrainResolution", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, TrainResolution), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrainResolution_MetaData), NewProp_TrainResolution_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_TrainIterations = { "TrainIterations", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, TrainIterations), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrainIterations_MetaData), NewProp_TrainIterations_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_TrainDensificationInterval = { "TrainDensificationInterval", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, TrainDensificationInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrainDensificationInterval_MetaData), NewProp_TrainDensificationInterval_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Resolution = { "Resolution", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Resolution), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Resolution_MetaData), NewProp_Resolution_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Iterations = { "Iterations", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Iterations), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Iterations_MetaData), NewProp_Iterations_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Feature_LR = { "Feature_LR", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Feature_LR), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Feature_LR_MetaData), NewProp_Feature_LR_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Opacity_LR = { "Opacity_LR", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Opacity_LR), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Opacity_LR_MetaData), NewProp_Opacity_LR_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Scaling_LR = { "Scaling_LR", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Scaling_LR), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scaling_LR_MetaData), NewProp_Scaling_LR_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Rotation_LR = { "Rotation_LR", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Rotation_LR), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Rotation_LR_MetaData), NewProp_Rotation_LR_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_MaxSteps = { "Position_LR_MaxSteps", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Position_LR_MaxSteps), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Position_LR_MaxSteps_MetaData), NewProp_Position_LR_MaxSteps_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_Init = { "Position_LR_Init", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Position_LR_Init), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Position_LR_Init_MetaData), NewProp_Position_LR_Init_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_Final = { "Position_LR_Final", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Position_LR_Final), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Position_LR_Final_MetaData), NewProp_Position_LR_Final_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_DelayMult = { "Position_LR_DelayMult", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Position_LR_DelayMult), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Position_LR_DelayMult_MetaData), NewProp_Position_LR_DelayMult_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensifyFromIter = { "DensifyFromIter", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, DensifyFromIter), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DensifyFromIter_MetaData), NewProp_DensifyFromIter_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensifyUntilIter = { "DensifyUntilIter", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, DensifyUntilIter), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DensifyUntilIter_MetaData), NewProp_DensifyUntilIter_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensifyGradThreshold = { "DensifyGradThreshold", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, DensifyGradThreshold), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DensifyGradThreshold_MetaData), NewProp_DensifyGradThreshold_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensificationInterval = { "DensificationInterval", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, DensificationInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DensificationInterval_MetaData), NewProp_DensificationInterval_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OpacityResetInterval = { "OpacityResetInterval", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, OpacityResetInterval), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OpacityResetInterval_MetaData), NewProp_OpacityResetInterval_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Depth_L1_WeightInit = { "Depth_L1_WeightInit", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Depth_L1_WeightInit), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Depth_L1_WeightInit_MetaData), NewProp_Depth_L1_WeightInit_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Depth_L1_WeightFinal = { "Depth_L1_WeightFinal", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, Depth_L1_WeightFinal), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Depth_L1_WeightFinal_MetaData), NewProp_Depth_L1_WeightFinal_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_LambdaDssim = { "LambdaDssim", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, LambdaDssim), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LambdaDssim_MetaData), NewProp_LambdaDssim_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_PercentDense = { "PercentDense", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, PercentDense), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PercentDense_MetaData), NewProp_PercentDense_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType = { "OutputType", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, OutputType), Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingOutputType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OutputType_MetaData), NewProp_OutputType_MetaData) }; // 4176072421
 void Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_bClippingByBound_SetBit(void* Obj)
@@ -1052,10 +1206,25 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplatt
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_PlyLoadCache = { "PlyLoadCache", nullptr, (EPropertyFlags)0x0114000000002000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, PlyLoadCache), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlyLoadCache_MetaData), NewProp_PlyLoadCache_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_GaussianSplattingTrainParams,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_GaussianSplattingTrainParamsCustom,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_TrainResolution,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_TrainIterations,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_TrainDensificationInterval,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Resolution,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Iterations,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Feature_LR,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Opacity_LR,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Scaling_LR,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Rotation_LR,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_MaxSteps,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_Init,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_Final,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Position_LR_DelayMult,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensifyFromIter,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensifyUntilIter,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensifyGradThreshold,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DensificationInterval,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OpacityResetInterval,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Depth_L1_WeightInit,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_Depth_L1_WeightFinal,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_LambdaDssim,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_PercentDense,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_bClippingByBound,
@@ -1106,19 +1275,19 @@ UGaussianSplattingStep_GaussianSplatting::~UGaussianSplattingStep_GaussianSplatt
 struct Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EGaussianSplattingSourceMode_StaticEnum, TEXT("EGaussianSplattingSourceMode"), &Z_Registration_Info_UEnum_EGaussianSplattingSourceMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2637505385U) },
-		{ EGaussianSplattingCameraMode_StaticEnum, TEXT("EGaussianSplattingCameraMode"), &Z_Registration_Info_UEnum_EGaussianSplattingCameraMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2413067996U) },
+		{ EGaussianSplattingSourceMode_StaticEnum, TEXT("EGaussianSplattingSourceMode"), &Z_Registration_Info_UEnum_EGaussianSplattingSourceMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1421777370U) },
+		{ EGaussianSplattingCameraMode_StaticEnum, TEXT("EGaussianSplattingCameraMode"), &Z_Registration_Info_UEnum_EGaussianSplattingCameraMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3184489191U) },
 		{ EGaussianSplattingStepStatus_StaticEnum, TEXT("EGaussianSplattingStepStatus"), &Z_Registration_Info_UEnum_EGaussianSplattingStepStatus, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3619305800U) },
 		{ EGaussianSplattingOutputType_StaticEnum, TEXT("EGaussianSplattingOutputType"), &Z_Registration_Info_UEnum_EGaussianSplattingOutputType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4176072421U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UGaussianSplattingStepBase, UGaussianSplattingStepBase::StaticClass, TEXT("UGaussianSplattingStepBase"), &Z_Registration_Info_UClass_UGaussianSplattingStepBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStepBase), 1515013387U) },
-		{ Z_Construct_UClass_UGaussianSplattingStep_Capture, UGaussianSplattingStep_Capture::StaticClass, TEXT("UGaussianSplattingStep_Capture"), &Z_Registration_Info_UClass_UGaussianSplattingStep_Capture, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_Capture), 2109180774U) },
+		{ Z_Construct_UClass_UGaussianSplattingStep_Capture, UGaussianSplattingStep_Capture::StaticClass, TEXT("UGaussianSplattingStep_Capture"), &Z_Registration_Info_UClass_UGaussianSplattingStep_Capture, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_Capture), 4009583309U) },
 		{ Z_Construct_UClass_UGaussianSplattingStep_SparseReconstruction, UGaussianSplattingStep_SparseReconstruction::StaticClass, TEXT("UGaussianSplattingStep_SparseReconstruction"), &Z_Registration_Info_UClass_UGaussianSplattingStep_SparseReconstruction, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_SparseReconstruction), 905170506U) },
-		{ Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting, UGaussianSplattingStep_GaussianSplatting::StaticClass, TEXT("UGaussianSplattingStep_GaussianSplatting"), &Z_Registration_Info_UClass_UGaussianSplattingStep_GaussianSplatting, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_GaussianSplatting), 216746800U) },
+		{ Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting, UGaussianSplattingStep_GaussianSplatting::StaticClass, TEXT("UGaussianSplattingStep_GaussianSplatting"), &Z_Registration_Info_UClass_UGaussianSplattingStep_GaussianSplatting, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_GaussianSplatting), 1315990315U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_952383041(TEXT("/Script/GaussianSplattingEditor"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_3374084490(TEXT("/Script/GaussianSplattingEditor"),
 	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::EnumInfo));

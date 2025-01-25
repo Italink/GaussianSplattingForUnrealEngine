@@ -68,6 +68,7 @@
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToolMenus\UnrealEditor-ToolMenus.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Projects\UnrealEditor-Projects.lib"
 "..\Plugins\FX\Niagara\Intermediate\Build\Win64\x64\UnrealEditor\Development\NiagaraEditor\UnrealEditor-NiagaraEditor.lib"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\LevelEditor\UnrealEditor-LevelEditor.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\AssetTools\UnrealEditor-AssetTools.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Kismet\UnrealEditor-Kismet.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"

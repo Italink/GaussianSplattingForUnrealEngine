@@ -183,7 +183,8 @@ template<> GAUSSIANSPLATTINGEDITOR_API UClass* StaticClass<class UGaussianSplatt
 
 #define FOREACH_ENUM_EGAUSSIANSPLATTINGSOURCEMODE(op) \
 	op(EGaussianSplattingSourceMode::Select) \
-	op(EGaussianSplattingSourceMode::Locate) 
+	op(EGaussianSplattingSourceMode::Locate) \
+	op(EGaussianSplattingSourceMode::Custom) 
 
 enum class EGaussianSplattingSourceMode : uint8;
 template<> struct TIsUEnumClass<EGaussianSplattingSourceMode> { enum { Value = true }; };
@@ -191,8 +192,7 @@ template<> GAUSSIANSPLATTINGEDITOR_API UEnum* StaticEnum<EGaussianSplattingSourc
 
 #define FOREACH_ENUM_EGAUSSIANSPLATTINGCAMERAMODE(op) \
 	op(EGaussianSplattingCameraMode::Hemisphere) \
-	op(EGaussianSplattingCameraMode::Sphere) \
-	op(EGaussianSplattingCameraMode::Custom) 
+	op(EGaussianSplattingCameraMode::Sphere) 
 
 enum class EGaussianSplattingCameraMode : uint8;
 template<> struct TIsUEnumClass<EGaussianSplattingCameraMode> { enum { Value = true }; };

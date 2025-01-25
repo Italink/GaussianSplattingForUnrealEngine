@@ -39,7 +39,7 @@ struct Z_Construct_UScriptStruct_FGaussianSplattingPoint_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "DisplayName", "Niagara ID" },
+		{ "DisplayName", "Gaussian Splatting Point" },
 		{ "ModuleRelativePath", "Public/GaussianSplattingPointDataInterface.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Position_MetaData[] = {
@@ -139,8 +139,8 @@ struct Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::NewProp_PointData_Inner = { "PointData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGaussianSplattingPoint, METADATA_PARAMS(0, nullptr) }; // 3625980373
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::NewProp_PointData = { "PointData", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UNiagaraDataInterfaceGaussianSplattingPoints, PointData), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PointData_MetaData), NewProp_PointData_MetaData) }; // 3625980373
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::NewProp_PointData_Inner = { "PointData", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGaussianSplattingPoint, METADATA_PARAMS(0, nullptr) }; // 535220827
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::NewProp_PointData = { "PointData", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UNiagaraDataInterfaceGaussianSplattingPoints, PointData), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PointData_MetaData), NewProp_PointData_MetaData) }; // 535220827
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::NewProp_PointData_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints_Statics::NewProp_PointData,
@@ -186,13 +186,13 @@ UNiagaraDataInterfaceGaussianSplattingPoints::~UNiagaraDataInterfaceGaussianSpla
 struct Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FGaussianSplattingPoint::StaticStruct, Z_Construct_UScriptStruct_FGaussianSplattingPoint_Statics::NewStructOps, TEXT("GaussianSplattingPoint"), &Z_Registration_Info_UScriptStruct_GaussianSplattingPoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaussianSplattingPoint), 3625980373U) },
+		{ FGaussianSplattingPoint::StaticStruct, Z_Construct_UScriptStruct_FGaussianSplattingPoint_Statics::NewStructOps, TEXT("GaussianSplattingPoint"), &Z_Registration_Info_UScriptStruct_GaussianSplattingPoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGaussianSplattingPoint), 535220827U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints, UNiagaraDataInterfaceGaussianSplattingPoints::StaticClass, TEXT("UNiagaraDataInterfaceGaussianSplattingPoints"), &Z_Registration_Info_UClass_UNiagaraDataInterfaceGaussianSplattingPoints, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UNiagaraDataInterfaceGaussianSplattingPoints), 1873110061U) },
+		{ Z_Construct_UClass_UNiagaraDataInterfaceGaussianSplattingPoints, UNiagaraDataInterfaceGaussianSplattingPoints::StaticClass, TEXT("UNiagaraDataInterfaceGaussianSplattingPoints"), &Z_Registration_Info_UClass_UNiagaraDataInterfaceGaussianSplattingPoints, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UNiagaraDataInterfaceGaussianSplattingPoints), 722354704U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_1475081304(TEXT("/Script/GaussianSplattingRuntime"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_373915176(TEXT("/Script/GaussianSplattingRuntime"),
 	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_Statics::ClassInfo),
 	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingRuntime_Public_GaussianSplattingPointDataInterface_h_Statics::ScriptStructInfo),
 	nullptr, 0);
