@@ -1,3 +1,6 @@
+---
+comments: true
+---
 # Gaussian Splatting For Unreal Engine
 **GaussianSplattingForUnrealEngine** 是一个虚幻引擎插件，它可以轻易将虚幻中的图形转换为高质量的3D高斯点云：
 
@@ -19,8 +22,8 @@
 ## 环境要求
 
 - **Unreal Engine 5.4.4** or **Unreal Engine 5.5.1**
-- **Colmap**：https://github.com/colmap/colmap
-- **Gaussian Splatting**：https://github.com/graphdeco-inria/gaussian-splatting
+- **Colmap** ：https://github.com/colmap/colmap
+- **Gaussian Splatting** ：https://github.com/graphdeco-inria/gaussian-splatting
 
 > 该插件的执行建立在上述仓库的命令行接口之上，请确保搭建正确的运行环境。
 
@@ -32,7 +35,7 @@
 
     ![image-20250125111347603](Resources/image-20250125111347603.png)
 
-- 安装完成之后可以在虚幻引擎的编辑器模式中找到 **Gaussian Splatting Mode**：
+- 安装完成之后可以在虚幻引擎的编辑器模式中找到 **Gaussian Splatting Mode** ：
 
     ![image-20250125114152866](Resources/image-20250125114152866.png)
 
@@ -50,9 +53,9 @@
 
 构建相机阵列的方式有三种：
 
-- **Select**：通过选中物体来确定需要捕获的场景图形
-- **Locate**：通过一个 `LocateActor` 来锚定捕获的中心点，再通过设置 `HiddenActors` 来排除不需要捕获的场景图形
-- **Custom**：以自定义的方式添加相机位，再通过设置 `HiddenActors` 来排除不需要捕获的场景图形
+- **Select** ：通过选中物体来确定需要捕获的场景图形
+- **Locate** ：通过一个 `LocateActor` 来锚定捕获的中心点，再通过设置 `HiddenActors` 来排除不需要捕获的场景图形
+- **Custom** ：以自定义的方式添加相机位，再通过设置 `HiddenActors` 来排除不需要捕获的场景图形
 
  **Select** 模式适用于单个或少量图形的捕获，我们可以在场景中按住`Ctrl`键来多选图形，也可以在场景大纲中进行选择，相机阵列将会以选中图形的包围盒来自动更新相机位置：
 
