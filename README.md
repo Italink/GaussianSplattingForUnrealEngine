@@ -29,6 +29,9 @@ comments: true
 
 ## 使用手册
 
+- [此处](https://drive.google.com/file/d/1gyKlCQacUsZUX6rXSKW1joyVxIYsBnHM/view?usp=drive_link)可以获取测试所生成的高斯点云。
+- 如果厌倦密集的文字说明，[此处](https://www.bilibili.com/video/BV1GUwNeYE6c)还有一个不那么友好的视频演示。
+
 ### 安装插件
 
 - 选择[仓库](https://github.com/Italink/GaussianSplattingForUnrealEngine)中对应引擎版本的Github分支，克隆最新的插件代码到项目工程的`Plugins`目录下：
