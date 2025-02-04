@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingsettings.cpp",
+        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingsettings.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\unrealengine\\publish\\proj54\\intermediate\\build\\win64\\x64\\projecteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingsettings.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingeditor\\uht\\gaussiansplattingsettings.generated.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingsettings.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingeditor\\uht\\gaussiansplattingsettings.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",

@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingeditorstyle.cpp",
+        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingeditorstyle.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\unrealengine\\publish\\proj54\\intermediate\\build\\win64\\x64\\projecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingeditorstyle.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingeditorstyle.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\public\\slate\\slategameresources.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",

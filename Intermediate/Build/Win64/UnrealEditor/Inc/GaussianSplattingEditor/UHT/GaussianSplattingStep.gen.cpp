@@ -1111,6 +1111,13 @@ struct Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics
 		{ "Category", "Output" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FeatureLevel_MetaData[] = {
+		{ "Category", "Output" },
+		{ "ClampMin", "16" },
+		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
+		{ "UIMax", "4096" },
+		{ "UIMin", "16" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bClippingByBound_MetaData[] = {
 		{ "Category", "Output" },
 		{ "ModuleRelativePath", "Private/GaussianSplattingStep.h" },
@@ -1155,6 +1162,7 @@ struct Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_PercentDense;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_OutputType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_OutputType;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_FeatureLevel;
 	static void NewProp_bClippingByBound_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bClippingByBound;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_ClippingBound;
@@ -1195,6 +1203,7 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplatt
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_PercentDense = { "PercentDense", nullptr, (EPropertyFlags)0x0010040000004001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, PercentDense), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PercentDense_MetaData), NewProp_PercentDense_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType = { "OutputType", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, OutputType), Z_Construct_UEnum_GaussianSplattingEditor_EGaussianSplattingOutputType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OutputType_MetaData), NewProp_OutputType_MetaData) }; // 4176072421
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_FeatureLevel = { "FeatureLevel", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UGaussianSplattingStep_GaussianSplatting, FeatureLevel), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FeatureLevel_MetaData), NewProp_FeatureLevel_MetaData) };
 void Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_bClippingByBound_SetBit(void* Obj)
 {
 	((UGaussianSplattingStep_GaussianSplatting*)Obj)->bClippingByBound = 1;
@@ -1227,6 +1236,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGaussian
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_PercentDense,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_OutputType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_FeatureLevel,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_bClippingByBound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_ClippingBound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting_Statics::NewProp_DistanceOfObservation,
@@ -1272,7 +1282,7 @@ UGaussianSplattingStep_GaussianSplatting::~UGaussianSplattingStep_GaussianSplatt
 // End Class UGaussianSplattingStep_GaussianSplatting
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics
+struct Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Private_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EGaussianSplattingSourceMode_StaticEnum, TEXT("EGaussianSplattingSourceMode"), &Z_Registration_Info_UEnum_EGaussianSplattingSourceMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1421777370U) },
@@ -1284,12 +1294,12 @@ struct Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnre
 		{ Z_Construct_UClass_UGaussianSplattingStepBase, UGaussianSplattingStepBase::StaticClass, TEXT("UGaussianSplattingStepBase"), &Z_Registration_Info_UClass_UGaussianSplattingStepBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStepBase), 1515013387U) },
 		{ Z_Construct_UClass_UGaussianSplattingStep_Capture, UGaussianSplattingStep_Capture::StaticClass, TEXT("UGaussianSplattingStep_Capture"), &Z_Registration_Info_UClass_UGaussianSplattingStep_Capture, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_Capture), 4009583309U) },
 		{ Z_Construct_UClass_UGaussianSplattingStep_SparseReconstruction, UGaussianSplattingStep_SparseReconstruction::StaticClass, TEXT("UGaussianSplattingStep_SparseReconstruction"), &Z_Registration_Info_UClass_UGaussianSplattingStep_SparseReconstruction, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_SparseReconstruction), 905170506U) },
-		{ Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting, UGaussianSplattingStep_GaussianSplatting::StaticClass, TEXT("UGaussianSplattingStep_GaussianSplatting"), &Z_Registration_Info_UClass_UGaussianSplattingStep_GaussianSplatting, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_GaussianSplatting), 1315990315U) },
+		{ Z_Construct_UClass_UGaussianSplattingStep_GaussianSplatting, UGaussianSplattingStep_GaussianSplatting::StaticClass, TEXT("UGaussianSplattingStep_GaussianSplatting"), &Z_Registration_Info_UClass_UGaussianSplattingStep_GaussianSplatting, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGaussianSplattingStep_GaussianSplatting), 3998431060U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_3374084490(TEXT("/Script/GaussianSplattingEditor"),
-	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Private_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_2474435365(TEXT("/Script/GaussianSplattingEditor"),
+	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Private_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Private_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Private_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Publish_Proj54_Plugins_GaussianSplattingForUnrealEngine_Private_Source_GaussianSplattingEditor_Private_GaussianSplattingStep_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

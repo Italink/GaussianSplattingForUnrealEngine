@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingruntime\\module.gaussiansplattingruntime.cpp",
+        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingruntime\\module.gaussiansplattingruntime.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\unrealengine\\publish\\proj54\\intermediate\\build\\win64\\x64\\projecteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingruntime\\definitions.gaussiansplattingruntime.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingruntime\\uht\\gaussiansplattingpointdatainterface.gen.cpp",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingruntime\\public\\gaussiansplattingpointdatainterface.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingruntime\\definitions.gaussiansplattingruntime.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingruntime\\uht\\gaussiansplattingpointdatainterface.gen.cpp",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingruntime\\public\\gaussiansplattingpointdatainterface.h",
             "d:\\unrealengine\\ue_5.4\\engine\\plugins\\fx\\niagara\\source\\niagara\\classes\\niagaradatainterfacearray.h",
             "d:\\unrealengine\\ue_5.4\\engine\\plugins\\fx\\niagara\\source\\niagara\\classes\\niagaradatainterfacerw.h",
             "d:\\unrealengine\\ue_5.4\\engine\\plugins\\fx\\niagara\\source\\niagara\\classes\\niagaradatainterface.h",
@@ -72,8 +72,8 @@
             "d:\\unrealengine\\ue_5.4\\engine\\plugins\\fx\\niagara\\intermediate\\build\\win64\\unrealeditor\\inc\\niagara\\uht\\niagarasimcachecustomstorageinterface.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\plugins\\fx\\niagara\\intermediate\\build\\win64\\unrealeditor\\inc\\niagara\\uht\\niagaradatainterfacearray.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\core\\public\\misc\\engineversioncomparison.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingruntime\\uht\\gaussiansplattingpointdatainterface.generated.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingruntime\\uht\\gaussiansplattingruntime.init.gen.cpp"
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingruntime\\uht\\gaussiansplattingpointdatainterface.generated.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingruntime\\uht\\gaussiansplattingruntime.init.gen.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

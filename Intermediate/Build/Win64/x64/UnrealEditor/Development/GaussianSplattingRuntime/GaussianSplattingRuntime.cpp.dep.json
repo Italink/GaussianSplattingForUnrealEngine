@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingruntime\\private\\gaussiansplattingruntime.cpp",
+        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingruntime\\private\\gaussiansplattingruntime.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\unrealengine\\publish\\proj54\\intermediate\\build\\win64\\x64\\projecteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gaussiansplattingruntime\\definitions.gaussiansplattingruntime.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingruntime\\public\\gaussiansplattingruntime.h"
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gaussiansplattingruntime\\definitions.gaussiansplattingruntime.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingruntime\\public\\gaussiansplattingruntime.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

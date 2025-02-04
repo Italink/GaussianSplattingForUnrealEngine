@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingedmode.cpp",
+        "Source": "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingedmode.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\unrealengine\\publish\\proj54\\intermediate\\build\\win64\\x64\\projecteditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.h.pch",
         "Includes": [
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingedmode.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\gaussiansplattingeditor\\definitions.gaussiansplattingeditor.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingedmode.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\editor\\editorframework\\public\\editormodes.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\public\\materials\\materialrenderproxy.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\editor\\unrealed\\public\\edmode.h",
@@ -30,7 +30,7 @@
             "d:\\unrealengine\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\typedelementframework\\uht\\typedelementlistproxy.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\typedelementruntime\\uht\\typedelementselectioninterface.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\typedelementruntime\\uht\\typedelementselectionset.generated.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\sgaussiansplattingeditor.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\sgaussiansplattingeditor.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\directionallightcomponent.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
@@ -47,7 +47,7 @@
             "d:\\unrealengine\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\texturerendertarget2d.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\stextcombobox.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\slate\\public\\widgets\\input\\ssuggestiontextbox.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\source\\gaussiansplattingeditor\\private\\gaussiansplattingstep.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\source\\gaussiansplattingeditor\\private\\gaussiansplattingstep.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\scenecapturecomponent.h",
             "d:\\unrealengine\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\scenecapturecomponent.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\engine\\triggersphere.h",
@@ -111,7 +111,7 @@
             "d:\\unrealengine\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\particles\\particlesystem.h",
             "d:\\unrealengine\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\particlesystem.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\plugins\\fx\\niagara\\intermediate\\build\\win64\\unrealeditor\\inc\\niagara\\uht\\niagarasystem.generated.h",
-            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingeditor\\uht\\gaussiansplattingstep.generated.h",
+            "d:\\unrealengine\\publish\\proj54\\plugins\\gaussiansplattingforunrealengine_private\\intermediate\\build\\win64\\unrealeditor\\inc\\gaussiansplattingeditor\\uht\\gaussiansplattingstep.generated.h",
             "d:\\unrealengine\\ue_5.4\\engine\\source\\editor\\editorframework\\public\\toolkits\\toolkitmanager.h"
         ],
         "ImportedModules": [],

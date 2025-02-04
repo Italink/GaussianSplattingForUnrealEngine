@@ -1,11 +1,11 @@
-"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp"
+"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp"
 /FI"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
-/FI"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Definitions.GaussianSplattingRuntime.h"
+/FI"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Definitions.GaussianSplattingRuntime.h"
 /Yu"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
 /Fp"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.pch"
-/Fo"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp.obj"
-/sourceDependencies "D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp.dep.json"
-@"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\GaussianSplattingRuntime.Shared.rsp"
+/Fo"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp.obj"
+/sourceDependencies "D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\Module.GaussianSplattingRuntime.cpp.dep.json"
+@"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\GaussianSplattingRuntime\GaussianSplattingRuntime.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

@@ -1,11 +1,11 @@
-"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Source\GaussianSplattingRuntime\Private\GaussianSplattingPointDataInterface.cpp"
+"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Source\GaussianSplattingRuntime\Private\GaussianSplattingPointDataInterface.cpp"
 /FI"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/FI"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\Definitions.GaussianSplattingRuntime.h"
+/FI"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\Definitions.GaussianSplattingRuntime.h"
 /Yu"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
 /Fp"D:\UnrealEngine\Publish\Proj54\Intermediate\Build\Win64\x64\ProjectEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\GaussianSplattingPointDataInterface.cpp.obj"
-/sourceDependencies "D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\GaussianSplattingPointDataInterface.cpp.dep.json"
-@"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\GaussianSplattingRuntime.Shared.rsp"
+/Fo"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\GaussianSplattingPointDataInterface.cpp.obj"
+/sourceDependencies "D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\GaussianSplattingPointDataInterface.cpp.dep.json"
+@"D:\UnrealEngine\Publish\Proj54\Plugins\GaussianSplattingForUnrealEngine_Private\Intermediate\Build\Win64\x64\UnrealEditor\Development\GaussianSplattingRuntime\GaussianSplattingRuntime.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
