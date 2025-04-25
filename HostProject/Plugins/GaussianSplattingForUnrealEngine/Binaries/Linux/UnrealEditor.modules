@@ -1,0 +1,8 @@
+{
+	"BuildId": "b83e82a8-219a-433d-8302-70efd13babfc",
+	"Modules": 
+	{
+		"GaussianSplattingEditor": "libUnrealEditor-GaussianSplattingEditor.so",
+		"GaussianSplattingRuntime": "libUnrealEditor-GaussianSplattingRuntime.so"
+	}
+}

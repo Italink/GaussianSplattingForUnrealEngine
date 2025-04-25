@@ -19,7 +19,8 @@ public class GaussianSplattingEditor : ModuleRules
 				"AssetRegistry",
                 "EditorFramework",
                 "ImageCore",
-                "Niagara"
+                "Niagara",
+                "GaussianSplattingRuntime",
             }
 		);
 
@@ -30,7 +31,6 @@ public class GaussianSplattingEditor : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore", 
-				"GaussianSplattingRuntime", 
 				"Niagara",
                 "MeshDescription",
                 "StaticMeshDescription",
@@ -44,7 +44,13 @@ public class GaussianSplattingEditor : ModuleRules
                 "ToolMenus",
                 "Projects",
                 "NiagaraEditor",
-                "LevelEditor"
+                "LevelEditor",
+				"Json",
+                "AssetTools",
+				"Landscape",
+                "AdvancedPreviewScene",
+                "AssetDefinition",
+                "JsonUtilities",
             }
 		);
 	}

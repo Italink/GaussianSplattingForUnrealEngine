@@ -37,11 +37,13 @@ public class GaussianSplattingRuntime: ModuleRules
 			{
 				"CoreUObject",
 				"Engine",
+                "Projects",
 				"Slate",
                 "SlateCore",
                 "Niagara",
-                "NiagaraSimCaching"
+                "NiagaraShader",
+                "zlib"
             }
             );
-	}
+    }
 }

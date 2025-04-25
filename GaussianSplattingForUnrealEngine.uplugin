@@ -10,15 +10,18 @@
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
+	"EngineVersion": "5.5.0",
 	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
-	"Installed": false,
+	"Installed": true,
+	"SupportedTargetPlatforms": [
+		"Win64",
+		"Linux"
+	],
 	"Modules": [
 		{
 			"Name": "GaussianSplattingRuntime",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "PostConfigInit"
 		},
 		{
 			"Name": "GaussianSplattingEditor",
