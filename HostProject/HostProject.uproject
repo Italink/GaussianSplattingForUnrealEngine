@@ -1,1 +1,0 @@
-{ "FileVersion": 3, "Plugins": [ { "Name": "GaussianSplattingForUnrealEngine", "Enabled": true } ] }
