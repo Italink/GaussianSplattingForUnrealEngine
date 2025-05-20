@@ -8,6 +8,10 @@ comments: true
 
 ![image-20250425144116238](Resources/image-20250425144116238.png)
 
+如果还不了解什么是3DGS，可以查看这篇文档：
+
+- https://italink.github.io/ModernGraphicsEngineGuide/04-UnrealEngine/16.3DGaussianSplatting/
+
 该插件支持以下功能：
 
 - 提供简单易用的编辑器工具来完成：
