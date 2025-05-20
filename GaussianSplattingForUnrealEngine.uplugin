@@ -10,9 +10,10 @@
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
-	"EngineVersion": "5.5.0",
 	"CanContainContent": true,
-	"Installed": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
 	"SupportedTargetPlatforms": [
 		"Win64",
 		"Linux"
@@ -34,5 +35,6 @@
 			"Name": "Niagara",
 			"Enabled": true
 		}
+
 	]
 }

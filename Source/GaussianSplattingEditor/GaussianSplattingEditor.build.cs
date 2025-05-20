@@ -2,8 +2,8 @@ using UnrealBuildTool;
 using System.IO;
 public class GaussianSplattingEditor : ModuleRules
 {
-	public GaussianSplattingEditor(ReadOnlyTargetRules Target) : base(Target){
-		bUsePrecompiled = true;
+	public GaussianSplattingEditor(ReadOnlyTargetRules Target) : base(Target)
+	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 		AddEngineThirdPartyPrivateStaticDependencies(Target, "zlib");
 

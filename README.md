@@ -31,7 +31,7 @@ comments: true
 
 ## 环境要求
 
-- **Unreal Engine 5.5.4**
+- **Unreal Engine 5.5 +**
 - **Colmap** ：https://github.com/colmap/colmap
 - **Gaussian Splatting** ：https://github.com/graphdeco-inria/gaussian-splatting
 
@@ -156,7 +156,7 @@ comments: true
 
 ![image-20250125143147405](Resources/image-20250125143147405.png)
 
-导出后直接点击资产可以打开一个简易的高斯点云编辑器：
+导致后直接点击资产可以打开一个简易的高斯点云编辑器：
 
 ![image-20250425144806596](Resources/image-20250425144806596.png)
 

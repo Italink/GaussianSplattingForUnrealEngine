@@ -3,8 +3,8 @@ using UnrealBuildTool;
 
 public class GaussianSplattingRuntime: ModuleRules
 {
-	public GaussianSplattingRuntime(ReadOnlyTargetRules Target) : base(Target){
-		bUsePrecompiled = true;
+	public GaussianSplattingRuntime(ReadOnlyTargetRules Target) : base(Target)
+	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
 
