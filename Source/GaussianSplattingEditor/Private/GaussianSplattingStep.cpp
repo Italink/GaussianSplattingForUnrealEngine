@@ -189,7 +189,7 @@ void UGaussianSplattingStep_Capture::Activate()
 #endif
 		SceneCaptureComp->PostProcessSettings = PostProcessSettings;
 		FPropertyChangedEvent PostChangedEvent(USceneCaptureComponent2D::StaticClass()->FindPropertyByName(GET_MEMBER_NAME_CHECKED(USceneCaptureComponent2D, PostProcessSettings)));
-		SceneCaptureComp->PostEditChangeProperty(ChangedEvent);
+		SceneCaptureComp->PostEditChangeProperty(PostChangedEvent);
 	}
 
 	if (World->WorldType == EWorldType::Editor && FSlateApplication::IsInitialized()) {
@@ -894,8 +894,7 @@ void UGaussianSplattingStep_GaussianSplatting::Export()
 
 	const FContentBrowserModule& ContentBrowserModule = FModuleManager::LoadModuleChecked<FContentBrowserModule>("ContentBrowser");
 	const FString SaveObjectPath = ContentBrowserModule.Get().CreateModalSaveAssetDialog(SaveAssetDialogConfig);
-	if (SaveObjectPath.IsEmpty())
-	{
+	if (SaveObjectPath.IsEmpty()){
 		FNotificationInfo NotifyInfo(FText::FromString("Path is empty"));
 		NotifyInfo.ExpireDuration = 5.0f;
 		FSlateNotificationManager::Get().AddNotification(NotifyInfo);

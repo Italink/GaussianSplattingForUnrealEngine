@@ -17,11 +17,11 @@
 
 UGaussianSplattingPointCloudAssetFactory::UGaussianSplattingPointCloudAssetFactory(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
-	Formats.Add(FString(TEXT("ply;")) + NSLOCTEXT("GaussianSplattingPointCloud", "FormatGaussianSplattingPLY", ".ply File").ToString());
+	Formats.Add(FString(TEXT("ply;PLY file")) + NSLOCTEXT("GaussianSplattingPointCloud", "PLY", ".ply File").ToString());
 	SupportedClass = UGaussianSplattingPointCloud::StaticClass();
-	bCreateNew = true;
+	bCreateNew = false;
+	bEditorImport = true;
 	bEditAfterNew = true;
-	ImportPriority = 1;
 }
 
 UObject* UGaussianSplattingPointCloudAssetFactory::FactoryCreateFile(UClass* InClass, UObject* InParent, FName InName, EObjectFlags Flags,
@@ -29,12 +29,15 @@ UObject* UGaussianSplattingPointCloudAssetFactory::FactoryCreateFile(UClass* InC
 {
 	FString FileNamePart, FolderPart, ExtensionPart;
 	FPaths::Split(Filename, FolderPart, FileNamePart, ExtensionPart);
-	UObject* OutObject = nullptr;
 	if (ExtensionPart == "ply"){
-		OutObject = UGaussianSplattingEditorLibrary::LoadSplatPly(Filename, InParent, *FileNamePart);
-		bOutOperationCanceled = false;
+		GEditor->GetEditorSubsystem<UImportSubsystem>()->BroadcastAssetPreImport(this, InClass, InParent, *FileNamePart, TEXT("ply"));
+		UGaussianSplattingPointCloud* PointCloud = UGaussianSplattingEditorLibrary::LoadSplatPly(Filename, InParent, *FileNamePart);
+		PointCloud->SetFlags(RF_Public | RF_Standalone);
+		PointCloud->MarkPackageDirty();
+		GEditor->GetEditorSubsystem<UImportSubsystem>()->BroadcastAssetPostImport(this, nullptr);
+		return PointCloud;
 	}
-	return OutObject;
+	return nullptr;
 }
 
 
@@ -65,7 +68,6 @@ EAssetCommandResult UAssetDefinition_GaussianSplattingPointCloud::OpenAssets(con
 		TSharedRef<FGaussianSplattingPointCloudEditor> NewGaussianSplattingPointCloudEditor(new FGaussianSplattingPointCloudEditor());
 		NewGaussianSplattingPointCloudEditor->InitEditor(OpenArgs.GetToolkitMode(), OpenArgs.ToolkitHost, PointCloud);
 	}
-
 	return EAssetCommandResult::Handled;
 }
 
@@ -79,12 +81,10 @@ UActorFactory_GaussianSplattingPointCloud::UActorFactory_GaussianSplattingPointC
 
 bool UActorFactory_GaussianSplattingPointCloud::CanCreateActorFrom(const FAssetData& AssetData, FText& OutErrorMsg)
 {
-	if (!AssetData.IsValid() || !AssetData.IsInstanceOf(UGaussianSplattingPointCloud::StaticClass()))
-	{
+	if (!AssetData.IsValid() || !AssetData.IsInstanceOf(UGaussianSplattingPointCloud::StaticClass())){
 		OutErrorMsg = NSLOCTEXT("CanCreateActor", "NoGaussianSplattingPointCloud", "A valid point cloud must be specified.");
 		return false;
 	}
-
 	return true;
 }
 
