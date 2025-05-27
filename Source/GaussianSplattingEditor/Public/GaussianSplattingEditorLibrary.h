@@ -12,10 +12,10 @@ struct FGaussianSplattingPointCloudMetaInfo
 	GENERATED_BODY()
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Gaussian Splatting")
-	FVector Location;
+	FVector Location = FVector::ZeroVector;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Gaussian Splatting")
-	FVector BoxExtent;
+	FVector BoxExtent = FVector::ZeroVector;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Gaussian Splatting")
 	TSet<FString> SourceAssets;
