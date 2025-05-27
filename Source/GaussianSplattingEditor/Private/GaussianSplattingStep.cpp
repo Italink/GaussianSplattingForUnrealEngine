@@ -926,7 +926,9 @@ UObject* UGaussianSplattingStep_GaussianSplatting::LoadPly(UObject* Outer, FName
 		PlyPath = Clip(PlyPath);
 	}
 	Output = UGaussianSplattingEditorLibrary::LoadSplatPly(PlyPath, Outer, AssetName);
-	Output->SetCompressionMethod(CompressionMethod);
+	if (Output) {
+		Output->SetCompressionMethod(CompressionMethod);
+	}
 	return Output;
 }
 
